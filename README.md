@@ -1,8 +1,8 @@
 # Eigene-Front-Test
 
-제출기한 : ~ 3/14 월 18:00
-github 링크와 함께 꼭 회신
-이메일 : dev@eigene.ai
+제출기한 : ~ 3/14 월 18:00   \
+github 링크와 함께 꼭 회신  \
+이메일 : dev@eigene.ai \
 
 ## 이름 : 윤성연
 
