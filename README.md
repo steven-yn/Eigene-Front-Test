@@ -4,22 +4,18 @@
 github 링크와 함께 꼭 회신
 이메일 : dev@eigene.ai
 
----
-
 ## 이름 : 윤성연
 
----
 
 ## 빌드 방법 :
 
-Eigene-Front-Test/proxy-server 에서 $ yarn install
-Eigene-Front-Test/shop-insite-data 에서 $ yarn install
+Eigene-Front-Test/proxy-server 에서 $ yarn install 및    \
+Eigene-Front-Test/shop-insite-data 에서 $ yarn install 해서 의존성 목록 패키지들을 설치합니다.
 
 1. Eigene-Front-Test/shop-insite-data 에서 $ yarn build
-2. Eigene-Front-Test/shop-insite-data 에서 바로 $ yarn start 하거나,
-3. Eigene-Front-Test/proxy-server 에서 $ yarn start (빌드된 리액트 파일)
-
----
+2. Eigene-Front-Test/proxy-server 에서 $ yarn start 해서 proxy server 를 켭니다. (5000 port)
+3. Eigene-Front-Test/proxy-server 에서 $ yarn start (빌드된 리액트 파일) 하거나,
+4. Eigene-Front-Test/shop-insite-data 에서 $ yarn start (webpack dev server, 3000 port)
 
 ## 프로젝트 설명 :
 
@@ -28,7 +24,7 @@ Eigene-Front-Test/shop-insite-data 에서 $ yarn install
 - React 함수형 컴포넌트, Redux
 - Express (proxy)
 - UI : Styled-components, Antd, Recharts
-- Webpack : CRACO
+- Yarn, CRA, Webpack, CRACO
 - Linter / Formatter : ESLint, Prettier
 - Language : Typescript(부분적), Javascript
 - package : Redux-Saga, Redux-Persist, Axios
@@ -97,16 +93,12 @@ ex)
 > line 컴포넌트의 색상을 결정하기위해 커스텀 color 라이브러리를 사용했습니다.
 > 컴포넌트가 map 함수에 들어가 새로운 컴포넌트들을 생성할때, index 값에따라 색상이 결정됩니다.
 
----
-
 ## 선택 구현 사항 체크:
 
 - [x] Antd를 활용하여 화면을 꾸민다.
 - [x] Redux-Saga를 활용하여 비동기 관련 처리를 한다.
 - [x] Redux-Persist를 활용하여 새로고침 시, 연령별 트렌드 조회의 파라미터가 유지 되도록 한다.
 - [ ] Custom Hook 에서 비즈니스 로직처리 및 상태관리, 비동기 처리를 한다.
-
----
 
 ## CORS Issue 해결 방법
 
