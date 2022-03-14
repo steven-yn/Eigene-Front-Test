@@ -2,7 +2,7 @@
 
 제출기한 : ~ 3/14 월 18:00   \
 github 링크와 함께 꼭 회신  \
-이메일 : dev@eigene.ai \
+이메일 : dev@eigene.ai
 
 ## 이름 : 윤성연
 
@@ -102,7 +102,7 @@ ex)
 
 ## CORS Issue 해결 방법
 
-CORS 는 브라우저 - 서버간 동일 출처 정책으로, 요청이 가능하려면 서버측에서 Acess-Control-Allow-Origin 을 헤더에 응답해줘야 합니다.
+CORS 는 브라우저 - 서버간 동일 출처 정책으로, 요청이 가능하려면 서버측에서 Acess-Control-Allow-Origin 을 헤더에 응답해줘야 합니다.   \
 하지만 서버 - 서버간의 요청에는 이 정책이 적용되지 않으므로, 이를 이용하여 Open API 를 호출합니다.
 
 Express 서버 (localhost:5000 port) 와 Webpack 개발서버 (localhost:3000 port) 간의 프록시 설정을 통해 Express 서버가 일종의 중계역할을 합니다.
