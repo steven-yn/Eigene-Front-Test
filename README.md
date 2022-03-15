@@ -31,26 +31,26 @@ Eigene-Front-Test/shop-insite-data 에서 $ yarn install 해서 의존성 목록
 
 #### 설명
 
-> components => UI component 폴더입니다.
-> containers => 스토어에서 상태가 변하면 UI component 에 바뀐 상태를 업데이트 해주는 component 입니다.
-> lib/api => Proxy 서버로의 API 요청입니다.
+> components => UI component 폴더입니다. \
+> containers => 스토어에서 상태가 변하면 UI component 에 바뀐 상태를 업데이트 해주는 component 입니다. \
+> lib/api => Proxy 서버로의 API 요청입니다.  \
 > modules => 리듀서 모듈 폴더입니다. modules/index.js 에서 root 리듀서를 정의합니다
 
 주요 로직
 
-> 각 input 과 select node 들에선 change 이벤트 발생시 key 와 value 를 받아와서 스토어에 등록합니다.
-> 스토어에 있는 값을 useSelector 로 각 노드들에게 다시 주어, 조회 후 스토어를 비우면서 상태가 변했으니 각 노드도 초기화 됩니다.
+> 각 input 과 select node 들에선 change 이벤트 발생시 key 와 value 를 받아와서 스토어에 등록합니다.   \
+> 스토어에 있는 값을 useSelector 로 각 노드들에게 다시 주어, 조회 후 스토어를 비우면서 상태가 변했으니 각 노드도 초기화 됩니다.    \
 > 조회전에 ages 배열에 값이 남아있으면, redux-persist 에 의해 모두 값이 로컬스토리지에 남아 있어 다시 불러오게 됩니다.
 
-> 조회 버튼을 클릭하면, state.filter 에 있는 값을 redux-saga 를 통해 axios 로 프록시 서버에 post 요청을 합니다.
-> 이때 .env 파일에 있는 client_id 값과 client_secret 값을 함께 보내줍니다.
-> proxy-server 는 전달받은 payload를 naver open API 로 다시 post 요청 해줍니다
-> 전달받은 client_id 값 들을 헤더에 씌워 보냅니다.
-> 요청에 성공하면, 응답을 다시 클라이언트로 보냅니다.
-> redux-saga 제너레이터에 의해 응답이 들어오면 store 에 그 값을 저장합니다
+> 조회 버튼을 클릭하면, state.filter 에 있는 값을 redux-saga 를 통해 axios 로 프록시 서버에 post 요청을 합니다.   \
+> 이때 .env 파일에 있는 client_id 값과 client_secret 값을 함께 보내줍니다.    \
+> proxy-server 는 전달받은 payload를 naver open API 로 다시 post 요청 해줍니다 \
+> 전달받은 client_id 값 들을 헤더에 씌워 보냅니다.  \
+> 요청에 성공하면, 응답을 다시 클라이언트로 보냅니다. \
+> redux-saga 제너레이터에 의해 응답이 들어오면 store 에 그 값을 저장합니다  \
 > store 상태가 변했으므로, Chart 컴포넌트가 렌더링 됩니다.
 
-> Chart.tsx : 네이버에서 응답한 데이터를 받아 recharts 에 그래프로 표현할수 있도록 데이터를 재가공 하는 로직이 있습니다
+> Chart.tsx : 네이버에서 응답한 데이터를 받아 recharts 에 그래프로 표현할수 있도록 데이터를 재가공 하는 로직이 있습니다   \
 > period 에 따른 group(key) : ratio(value) 객체를 새로운 배열에 push 합니다.
 
 ex)
@@ -73,7 +73,7 @@ ex)
 
 ```
 
-> 동시에 차트의 line 컴포넌트의 map 기준이 되기위한 배열을 생성합니다.
+> 동시에 차트의 line 컴포넌트의 map 기준이 되기위한 배열을 생성합니다.    \
 > group 의 value 명으로 이루어진 배열로 이루어져 있습니다.
 
 ex)
@@ -88,8 +88,8 @@ ex)
 
 ```
 
-> 로직 구현부(Chart.tsx) 에 주석 처리가 되어 있습니다 !
-> line 컴포넌트의 색상을 결정하기위해 커스텀 color 라이브러리를 사용했습니다.
+> 로직 구현부(Chart.tsx) 에 주석 처리가 되어 있습니다 !  \
+> line 컴포넌트의 색상을 결정하기위해 커스텀 color 라이브러리를 사용했습니다.    \
 > 컴포넌트가 map 함수에 들어가 새로운 컴포넌트들을 생성할때, index 값에따라 색상이 결정됩니다.
 
 ## 선택 구현 사항 체크:
